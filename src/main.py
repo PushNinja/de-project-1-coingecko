@@ -3,7 +3,12 @@ from transform import transform_data
 
 
 def main():
-    raw_file = fetch_data()
+    # Hier kannst du später andere Währungen / Seiten testen
+    raw_file = fetch_data(
+        vs_currency="usd",
+        per_page=100,
+        page=1,
+    )
     csv_path, parquet_path = transform_data(raw_file)
     print("Saved:", csv_path, parquet_path)
 
